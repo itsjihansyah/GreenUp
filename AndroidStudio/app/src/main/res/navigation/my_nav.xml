@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_nav"
+    app:startDestination="@id/plantHomeFragment">
+
+    <fragment
+        android:id="@+id/plantHomeFragment"
+        android:name="com.example.plantapp.PlantHomeFragment"
+        android:label="fragment_plant_home"
+        tools:layout="@layout/fragment_plant_home" >
+        <action
+            android:id="@+id/action_plantHomeFragment_to_addFragment"
+            app:destination="@id/addFragment" />
+        <action
+            android:id="@+id/action_plantHomeFragment_to_myPlantDetail"
+            app:destination="@id/myPlantDetail" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/addFragment"
+        android:name="com.example.plantapp.AddPlantFragment"
+        android:label="fragment_add"
+        tools:layout="@layout/fragment_add_plant" />
+    <fragment
+        android:id="@+id/updatePlantFragment"
+        android:name="com.example.plantapp.UpdatePlantFragment"
+        android:label="fragment_update_plant"
+        tools:layout="@layout/fragment_update_plant" >
+        <argument
+            android:name="id"
+            app:argType="string" />
+        <argument
+            android:name="name"
+            app:argType="string" />
+        <argument
+            android:name="type"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_updatePlantFragment_to_myPlantDetail"
+            app:destination="@id/myPlantDetail" />
+    </fragment>
+    <fragment
+        android:id="@+id/myPlantDetail"
+        android:name="com.example.plantapp.MyPlantDetail"
+        android:label="fragment_my_plant_detail"
+        tools:layout="@layout/fragment_my_plant_detail" >
+        <action
+            android:id="@+id/action_myPlantDetail_to_updatePlantFragment"
+            app:destination="@id/updatePlantFragment" />
+        <action
+            android:id="@+id/action_myPlantDetail_to_plantHomeFragment"
+            app:destination="@id/plantHomeFragment" />
+        <argument
+            android:name="id"
+            app:argType="string" />
+        <argument
+            android:name="name"
+            app:argType="string" />
+        <argument
+            android:name="type"
+            app:argType="string" />
+    </fragment>
+</navigation>

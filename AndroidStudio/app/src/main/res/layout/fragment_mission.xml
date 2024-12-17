@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- ScrollView to allow scrolling if needed -->
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/toolbar_dark"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:elevation="0dp"
+            android:background="@android:color/transparent" />
+
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="197dp"
+            android:src="@drawable/mission_title" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp"
+            android:background="#FFFFFF">
+
+            <!-- Level and points info -->
+            <TextView
+                android:id="@+id/tvLevelPoints"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Level 1 • 250 Points"
+                android:textColor="#000000"
+                android:textSize="24sp"
+                android:fontFamily="@font/inter_bold"
+                android:textStyle="bold"/>
+
+            <!-- Progress bar -->
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="16dp"
+                android:layout_marginTop="8dp"
+                android:progress="40"
+                android:max="100"
+                android:progressDrawable="@android:drawable/progress_horizontal"/>
+
+            <!-- Title: Task Collection -->
+            <TextView
+                android:id="@+id/tvTaskCollectionTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Task Collection"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginTop="24dp"
+                android:fontFamily="@font/inter_medium"
+                android:layout_marginBottom="16dp" />
+
+            <!-- Task 1 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/shape_lightgrey2"
+                android:padding="16dp"
+                android:layout_marginBottom="16dp"
+                android:gravity="center_vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <!-- Left icon (coin) -->
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_coin"
+                        android:layout_marginEnd="8dp" />
+
+                    <!-- Text Container -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tvTaskTitle1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/inter_medium"
+                            android:text="+25 Buy your first plant"
+                            android:textStyle="bold"
+                            android:textColor="#000000"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/tvTaskSubtitle1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/inter_regular"
+                            android:text="Submit the proof and get the points"
+                            android:textColor="#666666"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:src="@drawable/ic_arrow" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Task 2 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/shape_lightgrey2"
+                android:padding="16dp"
+                android:layout_marginBottom="16dp"
+                android:gravity="center_vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_coin"
+                        android:layout_marginEnd="8dp" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tvTaskTitle2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="+25 Water your plant"
+                            android:textStyle="bold"
+                            android:fontFamily="@font/inter_medium"
+                            android:textColor="#000000"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/tvTaskSubtitle2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Submit the proof and get the points"
+                            android:fontFamily="@font/inter_regular"
+                            android:textColor="#666666"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:src="@drawable/ic_arrow" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Task 3 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/shape_lightgrey2"
+                android:padding="16dp"
+                android:layout_marginBottom="16dp"
+                android:gravity="center_vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_coin"
+                        android:layout_marginEnd="8dp" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tvTaskTitle3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="+25 Add fertilizer"
+                            android:textStyle="bold"
+                            android:fontFamily="@font/inter_medium"
+
+                            android:textColor="#000000"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/tvTaskSubtitle3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Submit the proof and get the points"
+                            android:fontFamily="@font/inter_regular"
+                            android:textColor="#666666"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:src="@drawable/ic_arrow" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Task 4 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/shape_lightgrey2"
+                android:padding="16dp"
+                android:layout_marginBottom="16dp"
+                android:gravity="center_vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_coin"
+                        android:layout_marginEnd="8dp" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tvTaskTitle4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="+25 Plant your first seed"
+                            android:textStyle="bold"
+                            android:fontFamily="@font/inter_medium"
+
+                            android:textColor="#000000"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/tvTaskSubtitle4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/inter_regular"
+                            android:text="Submit the proof and get the points"
+                            android:textColor="#666666"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:src="@drawable/ic_arrow" />
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

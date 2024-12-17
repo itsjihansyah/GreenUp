@@ -1,0 +1,94 @@
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="133dp"
+    app:cardElevation="0dp"
+    app:cardUseCompatPadding="true"
+    app:cardPreventCornerOverlap="true"
+    android:layout_marginVertical="10dp"
+    android:background="@drawable/shape_yellow">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/rv_container"
+        android:layout_width="match_parent"
+        android:layout_gravity="center"
+        android:layout_height="133dp">
+
+        <ImageView
+            android:id="@+id/ivPlant"
+            android:layout_width="174dp"
+            android:layout_height="191dp"
+            android:layout_marginStart="192dp"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            android:src="@drawable/cica"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/tvHealth"
+            android:layout_width="93dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="32dp"
+            android:background="@drawable/circleshape_yellow"
+            android:fontFamily="@font/inter_bold"
+            android:gravity="center"
+            android:paddingLeft="10dp"
+            android:paddingRight="30dp"
+            android:text="90%"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.816" />
+
+        <TextView
+            android:id="@+id/tvPlantTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="39dp"
+            android:layout_marginStart="32dp"
+            android:fontFamily="@font/inter_bold"
+            android:text="Title"
+            android:textColor="@color/black"
+            android:textSize="32sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.148" />
+
+        <TextView
+            android:id="@+id/tvPlantType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:fontFamily="@font/inter_light"
+            android:text="Plant Type"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvPlantTitle"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/healthemoji"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="60dp"
+            android:layout_marginBottom="20dp"
+            android:text="🥰"
+            android:textColor="@color/black"
+            android:background="@drawable/circle"
+            android:gravity="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/tvHealth" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

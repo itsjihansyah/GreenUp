@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:padding="24dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="40dp"
+        android:orientation="vertical">
+        
+        <ImageView
+            android:id="@+id/ivClose"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_gravity="start"
+            android:layout_marginBottom="80dp"
+            android:src="@drawable/ic_close" />
+
+        <ImageView
+            android:id="@+id/ivRewardImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="24dp"
+            android:adjustViewBounds="true"
+            android:src="@drawable/reward" />
+
+        <TextView
+            android:id="@+id/tvRewardMessage"
+            android:layout_width="276dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:fontFamily="@font/inter_bold"
+            android:text="Yay! You’ve Earn 25 Points"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="32sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnShare"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="32dp"
+            android:background="@drawable/button_outline"
+            android:drawableLeft="@drawable/ic_share"
+            android:fontFamily="@font/inter_medium"
+            android:paddingHorizontal="60dp"
+            android:text="Share With Friends"
+            android:textColor="@color/black"
+            android:layout_marginTop="20dp"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tvFinishOtherTask"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/inter_regular"
+            android:text="Finish other tasks"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Task items -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Task 1 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/shape_lightgrey2"
+                android:padding="16dp"
+                android:layout_marginBottom="16dp"
+                android:gravity="center_vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_coin"
+                        android:layout_marginEnd="8dp" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tvTask1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/inter_medium"
+                            android:text="+25 Buy your first plant"
+                            android:textStyle="bold"
+                            android:textColor="#000000"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/tvTask2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/inter_regular"
+                            android:text="Submit the proof and get the points"
+                            android:textColor="#666666"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:src="@drawable/ic_arrow" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Task 1 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/shape_lightgrey2"
+                android:padding="16dp"
+                android:layout_marginBottom="16dp"
+                android:gravity="center_vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_coin"
+                        android:layout_marginEnd="8dp" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tvTaskTitle1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/inter_medium"
+                            android:text="+25 Buy your first plant"
+                            android:textStyle="bold"
+                            android:textColor="#000000"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/tvTaskSubtitle1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/inter_regular"
+                            android:text="Submit the proof and get the points"
+                            android:textColor="#666666"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:src="@drawable/ic_arrow" />
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>
