@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/my_nav"
-    app:startDestination="@id/plantHomeFragment">
+    app:startDestination="@id/splashFragment1">
 
     <fragment
         android:id="@+id/plantHomeFragment"
@@ -16,6 +16,9 @@
         <action
             android:id="@+id/action_plantHomeFragment_to_myPlantDetail"
             app:destination="@id/myPlantDetail" />
+        <action
+            android:id="@+id/action_plantHomeFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
     </fragment>
 
     <fragment
@@ -61,5 +64,119 @@
         <argument
             android:name="type"
             app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/missionFragment"
+        android:name="com.example.plantapp.MissionFragment"
+        android:label="fragment_mission2"
+        tools:layout="@layout/fragment_mission" />
+    <fragment
+        android:id="@+id/rewardFragment"
+        android:name="com.example.plantapp.RewardFragment"
+        android:label="fragment_reward2"
+        tools:layout="@layout/fragment_reward" />
+    <fragment
+        android:id="@+id/signupFragment"
+        android:name="com.example.plantapp.SignupFragment"
+        android:label="fragment_signup"
+        tools:layout="@layout/fragment_signup" >
+        <action
+            android:id="@+id/action_signupFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_signupFragment_to_homeFragment2"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.example.plantapp.SplashFragment"
+        android:label="fragment_splash"
+        tools:layout="@layout/fragment_splash" >
+        <action
+            android:id="@+id/action_splashFragment_to_signupFragment"
+            app:destination="@id/signupFragment" />
+        <action
+            android:id="@+id/action_splashFragment_to_signupFragment2"
+            app:destination="@id/signupFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/quizFragment"
+        android:name="com.example.plantapp.QuizFragment"
+        android:label="fragment_quiz"
+        tools:layout="@layout/fragment_quiz" >
+        <action
+            android:id="@+id/action_quizFragment_to_quizResultFragment"
+            app:destination="@id/quizResultFragment" />
+        <argument
+            android:name="correctAnswer"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_quizFragment_to_quizMenuFragment"
+            app:destination="@id/quizMenuFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/quizResultFragment"
+        android:name="com.example.plantapp.QuizResultFragment"
+        android:label="fragment_quiz_result"
+        tools:layout="@layout/fragment_quiz_result" >
+        <action
+            android:id="@+id/action_quizResultFragment_to_quizMenuFragment"
+            app:destination="@id/quizMenuFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.plantapp.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_plantHomeFragment"
+            app:destination="@id/plantHomeFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_missionFragment"
+            app:destination="@id/missionFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_shopFragment"
+            app:destination="@id/shopFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_quizMenuFragment"
+            app:destination="@id/quizMenuFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_reedemFragment"
+            app:destination="@id/reedemFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/shopFragment"
+        android:name="com.example.plantapp.ShopFragment"
+        android:label="fragment_shop"
+        tools:layout="@layout/fragment_shop" />
+    <fragment
+        android:id="@+id/splashFragment1"
+        android:name="com.example.plantapp.SplashFragment1"
+        android:label="fragment_splash1"
+        tools:layout="@layout/fragment_splash1" >
+        <action
+            android:id="@+id/action_splashFragment1_to_splashFragment"
+            app:destination="@id/splashFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/quizMenuFragment"
+        android:name="com.example.plantapp.QuizMenuFragment"
+        android:label="fragment_quiz_menu"
+        tools:layout="@layout/fragment_quiz_menu" >
+        <action
+            android:id="@+id/action_quizMenuFragment_to_quizFragment"
+            app:destination="@id/quizFragment" />
+        <action
+            android:id="@+id/action_quizMenuFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/reedemFragment"
+        android:name="com.example.plantapp.ReedemFragment"
+        android:label="fragment_reedem"
+        tools:layout="@layout/fragment_reedem" >
+        <action
+            android:id="@+id/action_reedemFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
     </fragment>
 </navigation>

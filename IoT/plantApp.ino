@@ -49,49 +49,49 @@ void readSensors(int &soilMoisture, float &temperature, float &humidity, float &
   lightIntensity = analogRead(A0) * 0.0976;
 }
 
-void sendSensorData() {
-  int soilMoisture;
-  float temperature, humidity, lightIntensity;
-  
-  readSensors(soilMoisture, temperature, humidity, lightIntensity);
+float calculateHealth(float soilMoisture, float temperature, float humidity, float lightIntensity) {
+    float soilScore = (soilMoisture >= 30 && soilMoisture <= 70) 
+        ? 100 
+        : max(0.0f, 100.0f - abs(50.0f - soilMoisture) * 4.0f);
 
-  if (isnan(temperature) || isnan(humidity)) {
-    Serial.println("Failed to read from DHT sensor!");
-    return;
-  }
+    float tempScore = (temperature >= 20 && temperature <= 30) 
+        ? 100 
+        : max(0.0f, 100.0f - abs(25.0f - temperature) * 10.0f);
 
-  Serial.printf("Soil Moisture: %d%%\nTemperature: %.2f°C\nHumidity: %.2f%%\nLight Intensity: %.2f lux\n",
-                soilMoisture, temperature, humidity, lightIntensity);
+    float humidityScore = (humidity >= 40 && humidity <= 60) 
+        ? 100 
+        : max(0.0f, 100.0f - abs(50.0f - humidity) * 2.0f);
 
-  FirebaseJson json;
-  json.add("health", String(humidity) + "%");
-  json.add("light", lightIntensity);
-  json.add("moist", soilMoisture);
-  json.add("temp", temperature);
+    float lightScore = (lightIntensity >= 500 && lightIntensity <= 1000) 
+        ? 100 
+        : max(0.0f, 100.0f - abs(750.0f - lightIntensity) * 0.1f);
 
-// send to firebase
-  if (Firebase.RTDB.setJSON(&firebaseData, firebasePath.c_str(), &json)) {
-    Serial.println("Data sent successfully to Firebase!");
-  } else {
-    Serial.printf("Failed to send data. Error: %s\n", firebaseData.errorReason().c_str());
-  }
+    return (soilScore * 0.4 + tempScore * 0.3 + humidityScore * 0.2 + lightScore * 0.1);
 }
 
 void setup() {
-  Serial.begin(9600);
-  dht.begin();
-
-  connectToWiFi();
-  initializeFirebase();
+    Serial.begin(9600);
+    dht.begin();
 }
 
 void loop() {
-  if (WiFi.status() != WL_CONNECTED) {
-    Serial.println("Wi-Fi disconnected. Reconnecting...");
-    connectToWiFi();
-  }
+    float soilMoisture = map(analogRead(SOIL_MOISTURE_PIN), 400, 1023, 100, 0);
+    float temperature = dht.readTemperature();
+    float humidity = dht.readHumidity();
+    float lightIntensity = analogRead(SOIL_MOISTURE_PIN) * 0.0976;
 
-  sendSensorData();
-  delay(5000);
+    float health = calculateHealth(soilMoisture, temperature, humidity, lightIntensity);
+
+    Serial.print("Soil Moisture: ");
+    Serial.print(soilMoisture);
+    Serial.print("%, Temperature: ");
+    Serial.print(temperature);
+    Serial.print("°C, Humidity: ");
+    Serial.print(humidity);
+    Serial.print("%, Light Intensity: ");
+    Serial.print(lightIntensity);
+    Serial.print(" lx, Health Score: ");
+    Serial.println(health);
+
+    delay(1000);
 }
-

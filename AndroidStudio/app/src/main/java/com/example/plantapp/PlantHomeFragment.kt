@@ -43,6 +43,11 @@ class PlantHomeFragment : Fragment() {
             findNavController().navigate(R.id.action_plantHomeFragment_to_addFragment)
         }
 
+        binding.toolbar.leftIcon.setOnClickListener {
+            findNavController().navigate(R.id.action_plantHomeFragment_to_homeFragment)
+
+        }
+
         firebaseRef = FirebaseDatabase.getInstance().getReference("plants")
         plantsList = arrayListOf()
         searchList = arrayListOf()
@@ -66,43 +71,6 @@ class PlantHomeFragment : Fragment() {
         return binding.root
     }
 
-//    private fun fetchData() {
-//        firebaseRef.addValueEventListener(object : ValueEventListener {
-//            override fun onDataChange(snapshot: DataSnapshot) {
-//                plantsList.clear()
-//                searchList.clear()
-//                if (snapshot.exists()) {
-//                    for (plantSnap in snapshot.children) {
-//                        val plants = plantSnap.getValue(Plants::class.java)
-//                        if (plants != null) {
-//                            // Fetch IoT data for the plant
-//                            val iotRef = FirebaseDatabase.getInstance().getReference("Iot").child(plants.id!!)
-//                            iotRef.addListenerForSingleValueEvent(object : ValueEventListener {
-//
-//                                override fun onDataChange(iotSnapshot: DataSnapshot) {
-//                                    val iot = iotSnapshot.getValue(Iot::class.java)
-//                                    if (iot != null) {
-//                                        iot.health = calculateHealthPercentage(iot.temp, iot.light, iot.moist)
-//                                        plantsList.add(plants)
-//                                        searchList.add(plants)
-//                                        rvAdapter.notifyDataSetChanged()
-//                                    }
-//                                }
-//
-//                                override fun onCancelled(error: DatabaseError) {
-//                                    Toast.makeText(context, "Failed to fetch IoT data: $error", Toast.LENGTH_SHORT).show()
-//                                }
-//                            })
-//                        }
-//                    }
-//                }
-//            }
-//
-//            override fun onCancelled(error: DatabaseError) {
-//                Toast.makeText(context, "Error: $error", Toast.LENGTH_SHORT).show()
-//            }
-//        })
-//    }
 
     private fun fetchData() {
         firebaseRef.addValueEventListener(object : ValueEventListener {
@@ -124,8 +92,6 @@ class PlantHomeFragment : Fragment() {
             }
         })
     }
-
-
 
     private fun setupSearchView() {
         binding.search.clearFocus()

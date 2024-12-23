@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingStart="20dp"
+            android:paddingTop="28dp"
+            android:gravity="right"
+            android:layout_marginBottom="20dp"
+            android:layout_gravity="center">
+
+            <TextView
+                android:id="@+id/toolbarTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/inter_bold"
+                android:text="Review Answers"
+                android:textColor="@color/black"
+                android:textSize="24sp"
+                android:layout_gravity="center" />
+
+            <ImageView
+                android:id="@+id/ivClose"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="70dp"
+                android:layout_marginEnd="20dp"
+                android:layout_gravity="center"
+                app:srcCompat="@drawable/ic_close"/>
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/green_box" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="230dp"
+                android:layout_marginTop="30dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/text_result"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:text="Answered 4 out of 4 questions"
+                    android:textColor="@color/white"
+                    android:textSize="24dp"
+                    android:fontFamily="@font/inter_bold"
+                    android:layout_marginBottom="10dp"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_coin"
+                        android:layout_marginEnd="8dp" />
+
+                    <TextView
+                        android:id="@+id/tv_point"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:text="+20"
+                        android:textColor="@color/white"
+                        android:textSize="21dp"
+                        android:fontFamily="@font/inter_medium" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+
+            <RelativeLayout
+                android:id="@+id/progress_layout"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginLeft="50dp"
+                android:layout_centerInParent="false">
+
+                <ProgressBar
+                    android:id="@+id/progress_bar"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/circular_shape"
+                    android:indeterminate="false"
+                    android:progressDrawable="@drawable/circular_progress_bar" />
+
+                <TextView
+                    android:id="@+id/progress_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:gravity="center"
+                    android:text="4/4"
+                    android:textColor="@color/white"
+                    android:textSize="28sp"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="20dp"
+            android:text="Answers"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler_questions"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginBottom="20dp"
+                    tools:listitem="@layout/rv_question_item"
+                    app:elevation="0dp"
+                    android:background="@drawable/shape_lightgrey2"/>
+            </LinearLayout>
+        </ScrollView>
+
+    </LinearLayout>
+</layout>

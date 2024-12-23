@@ -2,9 +2,13 @@
 <resources>
     <color name="black">#000000</color>
     <color name="white">#FFFFFF</color>
+    <color name="white_bg">#F7F7FA</color>
     <color name="primary_green">#428D74</color>
     <color name="grey">#E6E6E6</color>
     <color name="light_grey">#F5F7FB</color>
+    <color name="dark_gray">#6D7184</color>
+
+    6D7184
 
     <!--health indicator-->
     <color name="yellow">#F8E0C3</color>
@@ -19,6 +23,4 @@
     <color name="light_purple">#F1F3FF</color>
     <color name="light_pink">#FDEAEC</color>
     <color name="light_green">#E6FFEA</color>
-
-
 </resources>

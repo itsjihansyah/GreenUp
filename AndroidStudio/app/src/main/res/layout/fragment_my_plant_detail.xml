@@ -94,7 +94,6 @@
             android:layout_margin="12dp"
             android:orientation="horizontal">
 
-            <!-- light -->
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="0dp"
                 android:layout_height="153dp"
@@ -167,7 +166,6 @@
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <!-- moisture -->
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="0dp"
                 android:layout_height="153dp"

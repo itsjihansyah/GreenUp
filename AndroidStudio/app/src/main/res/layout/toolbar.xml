@@ -8,7 +8,6 @@
         android:layout_height="wrap_content"
         android:padding="20dp">
 
-        <!-- Back arrow icon -->
         <ImageView
             android:id="@+id/left_icon"
             android:layout_width="wrap_content"
@@ -16,7 +15,6 @@
             android:src="@drawable/baseline_arrow_back_ios_24"
             android:layout_centerVertical="true"/>
 
-        <!-- Title text -->
         <TextView
             android:id="@+id/toolbarTitle"
             android:layout_width="wrap_content"
@@ -28,7 +26,6 @@
             android:textColor="@color/black"
             android:textSize="24dp"/>
 
-        <!-- Delete icon positioned on the left -->
         <ImageView
             android:id="@+id/delete_icon"
             android:layout_width="wrap_content"
@@ -37,7 +34,5 @@
             android:layout_centerVertical="true"
             android:src="@drawable/baseline_delete_outline_24"
             android:visibility="gone"/>
-
     </RelativeLayout>
-
 </RelativeLayout>

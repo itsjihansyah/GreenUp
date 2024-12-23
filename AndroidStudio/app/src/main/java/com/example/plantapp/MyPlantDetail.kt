@@ -30,16 +30,13 @@ class MyPlantDetail : Fragment() {
     ): View? {
         _binding = FragmentMyPlantDetailBinding.inflate(inflater, container, false)
 
-        // Back button listener
         binding.toolbar.leftIcon.setOnClickListener {
-            requireActivity().onBackPressed()
+            findNavController().navigate(R.id.action_myPlantDetail_to_plantHomeFragment)
         }
 
-        // Delete icon setup
         deleteIcon = binding.toolbar.deleteIcon
         deleteIcon.visibility = View.VISIBLE
 
-        // Set up delete button functionality
         deleteIcon.setOnClickListener {
             MaterialAlertDialogBuilder(requireContext())
                 .setTitle("Delete item permanently")
@@ -53,10 +50,9 @@ class MyPlantDetail : Fragment() {
                 .show()
         }
 
-        // Setting plant name in toolbar
+
         binding.toolbar.toolbarTitle.text = args.name
 
-        // Edit button click listener
         binding.fabEdit.setOnClickListener {
             val action = MyPlantDetailDirections.actionMyPlantDetailToUpdatePlantFragment(
                 args.id,
@@ -66,7 +62,6 @@ class MyPlantDetail : Fragment() {
             findNavController().navigate(action)
         }
 
-        // Fetch IoT data for the plant
         fetchIoTData(args.id)
 
         return binding.root
@@ -79,7 +74,6 @@ class MyPlantDetail : Fragment() {
         val deletePlantTask = firebaseRef.removeValue()
         val deleteIotTask = firebaseIot.removeValue()
 
-        // Wait for both tasks to complete
         Tasks.whenAllComplete(deletePlantTask, deleteIotTask).addOnCompleteListener { task ->
             if (task.isSuccessful) {
                 Toast.makeText(requireContext(), "Plant deleted successfully", Toast.LENGTH_SHORT).show()
@@ -95,7 +89,6 @@ class MyPlantDetail : Fragment() {
     private fun fetchIoTData(plantId: String) {
         val firebaseRef = FirebaseDatabase.getInstance().getReference("Iot").child(plantId)
 
-        // Add a real-time listener to fetch data when it changes
         firebaseRef.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 val iotData = snapshot.getValue(Iot::class.java)
@@ -107,25 +100,21 @@ class MyPlantDetail : Fragment() {
             }
 
             override fun onCancelled(error: DatabaseError) {
-                // Handle any error that occurs when the listener is canceled
                 Log.e("Firebase", "Error: ${error.message}")
             }
         })
     }
 
 
-    // Update UI with IoT data
     private fun updateUIWithIoTData(iotData: Iot) {
         binding.apply {
             temperature.text = iotData.temp?.toString() ?: "N/A"
             moist.text = iotData.moist?.toString() ?: "N/A"
             light.text = iotData.light?.toString() ?: "N/A"
 
-            // Handle health data
             val health = iotData.health ?: "N/A"
             if (health != "N/A") {
                 try {
-                    // Remove '%' symbol, trim, and convert to integer
                     val healthWithoutPercent = health.replace("%", "").trim()
                     val healthInt = healthWithoutPercent.toFloatOrNull()?.toInt()
 
@@ -144,7 +133,6 @@ class MyPlantDetail : Fragment() {
         }
     }
 
-    // Show default message when IoT data is unavailable
     private fun showNoDataAvailable() {
         binding.apply {
             temperature.text = "N/A"

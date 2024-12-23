@@ -30,8 +30,6 @@ class AddPlantFragment : Fragment() {
         iotRef = FirebaseDatabase.getInstance().getReference("Iot")
 
 
-//        storageRef = FirebaseStorage.getInstance().getReference("Images")
-
         binding.toolbar.toolbarTitle.text = "Add Plant"
 
         binding.toolbar.leftIcon.setOnClickListener {

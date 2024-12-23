@@ -38,6 +38,7 @@ android {
 
     buildFeatures{
         viewBinding = true
+        dataBinding = true
     }
 }
 
@@ -53,7 +54,10 @@ dependencies {
     implementation(libs.androidx.navigation.ui.ktx)
     implementation(libs.firebase.storage.ktx)
     implementation(libs.firebase.storage)
+    implementation(libs.androidx.foundation.android)
+    implementation(libs.androidx.material3.android)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+    implementation(libs.androidx.core.splashscreen)
 }

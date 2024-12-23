@@ -48,6 +48,13 @@ class RvPlantAdapter(private val plantList: ArrayList<Plants>) : RecyclerView.Ad
             R.color.pink
         )
 
+        val plantImages = listOf(
+            R.drawable.cica,
+            R.drawable.rock,
+            R.drawable.bubu,
+            R.drawable.leon
+        )
+
         val backgroundColor = ContextCompat.getColor(holder.itemView.context, bgcolors[position % bgcolors.size])
         val drawable = ContextCompat.getDrawable(holder.itemView.context, R.drawable.shape_yellow)
 
@@ -69,6 +76,9 @@ class RvPlantAdapter(private val plantList: ArrayList<Plants>) : RecyclerView.Ad
             tvPlantType.text = currentItem.type
 
 //          letak error
+            val plantImageResId = plantImages[position % plantImages.size]
+            ivPlant.setImageResource(plantImageResId)
+
             val plantId = currentItem.id
             if (plantId != null) {
                 iotRef.child(plantId).get()
@@ -77,7 +87,7 @@ class RvPlantAdapter(private val plantList: ArrayList<Plants>) : RecyclerView.Ad
 
                         if (iotHealth != null) {
                             val health = iotHealth.health ?: "N/A"
-                            if (health != "N/A"){
+                            if (health != "N/A") {
                                 val healthWithoutPercent = health.replace("%", "").trim()
                                 val healthInt = healthWithoutPercent.toFloat().toInt()
 
@@ -100,9 +110,6 @@ class RvPlantAdapter(private val plantList: ArrayList<Plants>) : RecyclerView.Ad
                 Log.e("FirebaseError", "Plant ID is null")
             }
 
-
-
-
             rvContainer.setOnClickListener {
                 val action = PlantHomeFragmentDirections.actionPlantHomeFragmentToMyPlantDetail(
                     currentItem.id.toString(),
@@ -113,7 +120,4 @@ class RvPlantAdapter(private val plantList: ArrayList<Plants>) : RecyclerView.Ad
             }
         }
     }
-
-
-
 }

@@ -26,6 +26,11 @@ public class PlantHomeFragmentDirections {
     return new ActionPlantHomeFragmentToMyPlantDetail(id, name, type);
   }
 
+  @NonNull
+  public static NavDirections actionPlantHomeFragmentToHomeFragment() {
+    return new ActionOnlyNavDirections(R.id.action_plantHomeFragment_to_homeFragment);
+  }
+
   public static class ActionPlantHomeFragmentToMyPlantDetail implements NavDirections {
     private final HashMap arguments = new HashMap();
 

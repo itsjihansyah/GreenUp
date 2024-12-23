@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+    <LinearLayout
+        android:id="@+id/llTextGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:padding="10dp">
+
+        <TextView
+            android:id="@+id/tvMainCategories"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginEnd="80dp"
+            android:text="Order Your Favourite Plant"
+            android:fontFamily="@font/inter_bold"
+            android:textSize="32sp"
+            android:textColor="@color/black"/>
+
+        <ImageView
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@drawable/ic_cart"
+            android:contentDescription="Settings Icon" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llSearchBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:padding="10dp">
+
+        <EditText
+            android:id="@+id/etSearch"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Search plants..."
+            android:padding="18dp"
+            android:background="@drawable/shape_super_light_grey"
+            android:drawableStart="@drawable/ic_search"
+            android:drawableTint="@color/dark_gray"
+            android:drawablePadding="8dp"
+            android:inputType="text"
+            android:textColor="@color/dark_gray"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+
+    <!-- RecyclerView Section -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvMainProductsList"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="10dp"
+        tools:listitem="@layout/rv_shop_item" />
+
+</LinearLayout>

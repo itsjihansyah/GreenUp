@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/white"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="match_parent"
+        android:layout_height="469dp"
+        android:src="@drawable/green_box2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar_green"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageView
+        android:id="@+id/plantImage"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_centerInParent="false"
+        android:src="@drawable/monstera"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.727" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="0dp"
+        android:layout_marginTop="50dp"
+        android:gravity="center"
+        app:layout_constraintBottom_toTopOf="@+id/plantImage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageView2"
+        app:layout_constraintVertical_bias="0.392">
+
+        <TextView
+            android:id="@+id/questionNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/inter_bold"
+            android:text="Question 1"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="200dp"
+            android:layout_height="10dp"
+            android:layout_marginHorizontal="20dp"
+            android:max="100"
+            android:progress="10"
+            android:progressDrawable="@drawable/green_back" />
+
+        <TextView
+            android:id="@+id/questionProgress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/inter_regular"
+            android:text="1/10"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/questionText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Question Text"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:fontFamily="@font/inter_bold"
+        android:textSize="24sp"
+        app:layout_constraintTop_toBottomOf="@id/imageView2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginVertical="28dp"/>
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@+id/questionText"
+        tools:layout_editor_absoluteX="0dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginVertical="10dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/questionText">
+
+            <Button
+                android:id="@+id/optionA"
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_marginEnd="10dp"
+                android:layout_weight="1"
+                android:backgroundTint="@color/light_grey"
+                android:gravity="center"
+                android:padding="20dp"
+                android:text="Option A"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                app:cornerRadius="20dp" />
+
+            <Button
+                android:id="@+id/optionB"
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_marginStart="10dp"
+                android:layout_weight="1"
+                android:backgroundTint="@color/light_grey"
+                android:gravity="center"
+                android:padding="20dp"
+                android:text="Option B"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                app:cornerRadius="20dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginVertical="10dp"
+            android:layout_marginTop="148dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/questionText">
+
+            <Button
+                android:id="@+id/optionC"
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_marginEnd="10dp"
+                android:layout_weight="1"
+                android:backgroundTint="@color/light_grey"
+                android:gravity="center"
+                android:padding="20dp"
+                android:text="Option C"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                app:cornerRadius="20dp" />
+
+            <Button
+                android:id="@+id/optionD"
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_marginStart="10dp"
+                android:layout_weight="1"
+                android:backgroundTint="@color/light_grey"
+                android:gravity="center"
+                android:padding="20dp"
+                android:text="Option D"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                app:cornerRadius="20dp" />
+        </LinearLayout>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
