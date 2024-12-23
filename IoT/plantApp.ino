@@ -3,10 +3,10 @@
 #include <Firebase_ESP_Client.h>
 
 const char* ssid = "Jey";
-const char* password = "bilangsayangdulu"; 
+const char* password = "..."; 
 
-#define FIREBASE_HOST "plantapp-f52b2-default-rtdb.firebaseio.com" 
-#define FIREBASE_AUTH "A9zftumLy7KQNvuF1Q56FXfLXgtTnyASIWsk13gS"
+#define FIREBASE_HOST "..." 
+#define FIREBASE_AUTH "..."
 
 #define SOIL_MOISTURE_PIN A0
 #define DHT_PIN D2
