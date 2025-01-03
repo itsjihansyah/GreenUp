@@ -23,6 +23,7 @@ class MyPlantDetail : Fragment() {
 
     private val args: MyPlantDetailArgs by navArgs()
     private lateinit var deleteIcon: ImageView
+    private lateinit var firebaseListener: ValueEventListener
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -78,18 +79,18 @@ class MyPlantDetail : Fragment() {
             if (task.isSuccessful) {
                 Toast.makeText(requireContext(), "Plant deleted successfully", Toast.LENGTH_SHORT).show()
                 val action = MyPlantDetailDirections.actionMyPlantDetailToPlantHomeFragment()
-                findNavController().navigate(action) // Navigate only once
+                findNavController().navigate(action) // Ensure only single navigation
             } else {
                 Toast.makeText(requireContext(), "Failed to delete plant", Toast.LENGTH_SHORT).show()
             }
         }
     }
 
-
+    //penanda
     private fun fetchIoTData(plantId: String) {
         val firebaseRef = FirebaseDatabase.getInstance().getReference("Iot").child(plantId)
 
-        firebaseRef.addValueEventListener(object : ValueEventListener {
+        firebaseListener = object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 val iotData = snapshot.getValue(Iot::class.java)
                 if (iotData != null) {
@@ -102,7 +103,15 @@ class MyPlantDetail : Fragment() {
             override fun onCancelled(error: DatabaseError) {
                 Log.e("Firebase", "Error: ${error.message}")
             }
-        })
+        }
+        firebaseRef.addValueEventListener(firebaseListener)
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        val firebaseRef = FirebaseDatabase.getInstance().getReference("Iot").child(args.id)
+        firebaseRef.removeEventListener(firebaseListener) // Detach the listener
+        _binding = null
     }
 
 
@@ -140,11 +149,10 @@ class MyPlantDetail : Fragment() {
             light.text = "N/A"
             health.text = "N/A"
         }
-        Toast.makeText(requireContext(), "IoT device not connected", Toast.LENGTH_SHORT).show()
     }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
-    }
+//    override fun onDestroyView() {
+//        super.onDestroyView()
+//        _binding = null
+//    }
 }

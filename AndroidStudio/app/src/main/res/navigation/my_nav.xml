@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/my_nav"
-    app:startDestination="@id/splashFragment1">
+    app:startDestination="@id/splashFragment">
 
     <fragment
         android:id="@+id/plantHomeFragment"
@@ -143,6 +143,9 @@
         <action
             android:id="@+id/action_homeFragment_to_reedemFragment"
             app:destination="@id/reedemFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_generateTextBotFragment"
+            app:destination="@id/generateTextBotFragment" />
     </fragment>
     <fragment
         android:id="@+id/shopFragment"
@@ -177,6 +180,15 @@
         tools:layout="@layout/fragment_reedem" >
         <action
             android:id="@+id/action_reedemFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/generateTextBotFragment"
+        android:name="com.example.plantapp.GenerateTextBotFragment"
+        android:label="fragment_generate_text_bot"
+        tools:layout="@layout/fragment_generate_text_bot" >
+        <action
+            android:id="@+id/action_generateTextBotFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
     </fragment>
 </navigation>

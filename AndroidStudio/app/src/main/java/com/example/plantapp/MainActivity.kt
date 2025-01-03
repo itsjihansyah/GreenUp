@@ -1,3 +1,14 @@
+/*
+Team:
+Jihan Syahira Adnanda Putri (21523232)
+Mohaned Mohammed Naji Hider (22523232)
+M Farrel R Fajra (21523136)
+Muhammad Iqbal Arrasyid (22523260)
+
+Please use Medium Phone for a better visual
+*/
+
+
 package com.example.plantapp
 
 import android.os.Bundle

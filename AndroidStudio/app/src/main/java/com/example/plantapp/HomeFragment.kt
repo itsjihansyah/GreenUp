@@ -40,13 +40,19 @@ class HomeFragment : Fragment() {
             findNavController().navigate(R.id.action_homeFragment_to_reedemFragment)
         }
 
+        binding.reminder.setOnClickListener {
+            findNavController().navigate(R.id.action_homeFragment_to_generateTextBotFragment)
+        }
+
         fetchRealtimeDatabaseData("-OD6dujd6CdaWRoxq0j7")
     }
+
+    private var databaseListener: ValueEventListener? = null
 
     private fun fetchRealtimeDatabaseData(id: String) {
         database = FirebaseDatabase.getInstance().getReference("Iot/$id")
 
-        database.addValueEventListener(object : ValueEventListener {
+        databaseListener = object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 val health = snapshot.child("health").value?.toString() ?: "N/A"
                 updateHealthPercentage(health)
@@ -55,33 +61,41 @@ class HomeFragment : Fragment() {
             override fun onCancelled(error: DatabaseError) {
                 Log.e("FirebaseError", "Failed to fetch data: ${error.message}")
             }
-        })
+        }
+
+        database.addValueEventListener(databaseListener!!)
     }
 
+
     private fun updateHealthPercentage(health: String) {
-        binding.apply {
+        _binding?.apply {
             if (health != "N/A") {
                 try {
                     val healthWithoutPercent = health.replace("%", "").trim()
                     val healthInt = healthWithoutPercent.toFloatOrNull()?.toInt()
 
                     if (healthInt != null) {
-                        binding.plantHealth.text = "$healthInt%"
+                        plantHealth.text = "$healthInt%"
                     } else {
-                        binding.plantHealth.text = "N/A"
+                        plantHealth.text = "N/A"
                     }
                 } catch (e: Exception) {
-                    binding.plantHealth.text = "N/A"
+                    plantHealth.text = "N/A"
                     Log.e("Error", "Invalid health value: $health", e)
                 }
             } else {
-                binding.plantHealth.text = "N/A"
+                plantHealth.text = "N/A"
             }
         }
     }
 
+
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+
+        // Remove the Firebase listener if it exists
+        databaseListener?.let { database.removeEventListener(it) }
     }
+
 }

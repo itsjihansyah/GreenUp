@@ -30,6 +30,7 @@ class PlantHomeFragment : Fragment() {
     private lateinit var rvAdapter: RvPlantAdapter
     private lateinit var plantsList:ArrayList<Plants>
     private lateinit var firebaseRef : DatabaseReference
+    private lateinit var firebaseListener: ValueEventListener
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -71,9 +72,9 @@ class PlantHomeFragment : Fragment() {
         return binding.root
     }
 
-
+    // penanda
     private fun fetchData() {
-        firebaseRef.addValueEventListener(object : ValueEventListener {
+        firebaseListener = object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 plantsList.clear()
                 searchList.clear()
@@ -90,7 +91,14 @@ class PlantHomeFragment : Fragment() {
             override fun onCancelled(error: DatabaseError) {
                 Toast.makeText(context, "Error: $error", Toast.LENGTH_SHORT).show()
             }
-        })
+        }
+        firebaseRef.addValueEventListener(firebaseListener)
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        firebaseRef.removeEventListener(firebaseListener) // Detach the listener
+        _binding = null
     }
 
     private fun setupSearchView() {
