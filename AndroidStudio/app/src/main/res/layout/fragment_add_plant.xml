@@ -107,16 +107,16 @@
 
     <Button
         android:id="@+id/saveButton"
+        android:layout_width="match_parent"
+        android:layout_height="63dp"
         android:layout_marginHorizontal="20dp"
         android:layout_marginVertical="20dp"
-        android:background="@drawable/shape_black"
-        android:layout_width="match_parent"
-        android:layout_height="85dp"
         android:layout_marginTop="10dp"
+        android:background="@drawable/shape_black"
         android:fontFamily="@font/inter_regular"
         android:text="Add Plant"
         android:textAllCaps="false"
-        android:textSize="20sp"
-        android:textColor="@color/white" />
+        android:textColor="@color/white"
+        android:textSize="20sp" />
 
 </LinearLayout>

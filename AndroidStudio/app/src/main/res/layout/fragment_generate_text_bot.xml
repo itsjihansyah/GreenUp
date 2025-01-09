@@ -43,7 +43,7 @@
                     android:id="@+id/bg"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="47dp"
+                    android:layout_marginBottom="53dp"
                     android:src="@drawable/toolbar_bot"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"/>
@@ -97,16 +97,18 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView"
-            android:layout_width="match_parent"
-            android:layout_height="675dp"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
             android:layout_above="@+id/linearLayout4"
+            android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
+            android:layout_marginStart="10dp"
             android:layout_marginLeft="20dp"
-            android:layout_marginTop="107dp"
-            android:layout_marginBottom="17dp"
+            android:layout_marginTop="90dp"
+            android:layout_marginBottom="4dp"
             android:background="@color/white"
             android:padding="10dp"
-            tools:listitem="@layout/item_chat_bubble"/>
+            tools:listitem="@layout/item_chat_bubble" />
 
         <LinearLayout
             android:id="@+id/linearLayout4"

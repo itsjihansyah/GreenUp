@@ -19,8 +19,7 @@
         android:background="@drawable/shape_black2"
         android:orientation="vertical"
         android:gravity="center"
-        android:layout_marginBottom="10dp"
-        android:weightSum="1">
+        android:layout_marginBottom="10dp">
 
         <TextView
             android:layout_width="wrap_content"
@@ -69,7 +68,7 @@
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="200dp"
+                    android:layout_marginStart="170dp"
                     android:layout_marginTop="4dp"
                     android:orientation="vertical">
 
@@ -78,7 +77,7 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/inter_extrabold"
                         android:text="50% OFF"
-                        android:textSize="28sp"
+                        android:textSize="24sp"
                         android:textStyle="bold" />
 
                     <TextView
@@ -113,14 +112,14 @@
 
                 <LinearLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="70dp"
                     android:gravity="center"
                     android:orientation="horizontal">
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginRight="30dp"
+                        android:layout_height="60dp"
+                        android:layout_marginRight="10dp"
                         android:orientation="vertical">
 
                         <TextView
@@ -129,12 +128,12 @@
                             android:layout_marginHorizontal="15dp"
                             android:layout_marginTop="25dp"
                             android:text="Valid until:"
-                            android:textSize="12dp" />
+                            android:textSize="10dp" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginHorizontal="15dp"
+                            android:layout_marginHorizontal="14dp"
                             android:text="01 Oct 2024 - 01 Jan 2025" />
 
                     </LinearLayout>
@@ -146,11 +145,11 @@
                         android:layout_marginTop="13dp"
                         android:layout_marginRight="5dp"
                         android:backgroundTint="@color/black"
-                        android:fontFamily="@font/inter_regular"
+                        android:fontFamily="@font/inter_medium"
                         android:paddingVertical="4dp"
                         android:text="Claim"
                         android:textColor="@color/white"
-                        android:textSize="12dp" />
+                        android:textSize="10dp" />
                 </LinearLayout>
             </LinearLayout>
 
@@ -160,13 +159,12 @@
                 android:background="@drawable/voucher"
                 android:orientation="vertical"
                 android:padding="16dp"
-                android:layout_marginTop="8dp"
                 android:layout_marginBottom="8dp">
 
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="200dp"
+                    android:layout_marginStart="170dp"
                     android:layout_marginTop="4dp"
                     android:orientation="vertical">
 
@@ -175,7 +173,7 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/inter_extrabold"
                         android:text="50% OFF"
-                        android:textSize="28sp"
+                        android:textSize="24sp"
                         android:textStyle="bold" />
 
                     <TextView
@@ -210,14 +208,14 @@
 
                 <LinearLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="70dp"
                     android:gravity="center"
                     android:orientation="horizontal">
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginRight="30dp"
+                        android:layout_height="60dp"
+                        android:layout_marginRight="10dp"
                         android:orientation="vertical">
 
                         <TextView
@@ -226,12 +224,12 @@
                             android:layout_marginHorizontal="15dp"
                             android:layout_marginTop="25dp"
                             android:text="Valid until:"
-                            android:textSize="12dp" />
+                            android:textSize="10dp" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginHorizontal="15dp"
+                            android:layout_marginHorizontal="14dp"
                             android:text="01 Oct 2024 - 01 Jan 2025" />
 
                     </LinearLayout>
@@ -243,11 +241,11 @@
                         android:layout_marginTop="13dp"
                         android:layout_marginRight="5dp"
                         android:backgroundTint="@color/black"
-                        android:fontFamily="@font/inter_regular"
+                        android:fontFamily="@font/inter_medium"
                         android:paddingVertical="4dp"
                         android:text="Claim"
                         android:textColor="@color/white"
-                        android:textSize="12dp" />
+                        android:textSize="10dp" />
                 </LinearLayout>
             </LinearLayout>
 
@@ -257,13 +255,12 @@
                 android:background="@drawable/voucher"
                 android:orientation="vertical"
                 android:padding="16dp"
-                android:layout_marginTop="8dp"
                 android:layout_marginBottom="8dp">
 
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="200dp"
+                    android:layout_marginStart="170dp"
                     android:layout_marginTop="4dp"
                     android:orientation="vertical">
 
@@ -272,7 +269,7 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/inter_extrabold"
                         android:text="50% OFF"
-                        android:textSize="28sp"
+                        android:textSize="24sp"
                         android:textStyle="bold" />
 
                     <TextView
@@ -307,14 +304,14 @@
 
                 <LinearLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="70dp"
                     android:gravity="center"
                     android:orientation="horizontal">
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginRight="30dp"
+                        android:layout_height="60dp"
+                        android:layout_marginRight="10dp"
                         android:orientation="vertical">
 
                         <TextView
@@ -323,12 +320,12 @@
                             android:layout_marginHorizontal="15dp"
                             android:layout_marginTop="25dp"
                             android:text="Valid until:"
-                            android:textSize="12dp" />
+                            android:textSize="10dp" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginHorizontal="15dp"
+                            android:layout_marginHorizontal="14dp"
                             android:text="01 Oct 2024 - 01 Jan 2025" />
 
                     </LinearLayout>
@@ -340,11 +337,11 @@
                         android:layout_marginTop="13dp"
                         android:layout_marginRight="5dp"
                         android:backgroundTint="@color/black"
-                        android:fontFamily="@font/inter_regular"
+                        android:fontFamily="@font/inter_medium"
                         android:paddingVertical="4dp"
                         android:text="Claim"
                         android:textColor="@color/white"
-                        android:textSize="12dp" />
+                        android:textSize="10dp" />
                 </LinearLayout>
             </LinearLayout>
 
@@ -354,13 +351,12 @@
                 android:background="@drawable/voucher"
                 android:orientation="vertical"
                 android:padding="16dp"
-                android:layout_marginTop="8dp"
                 android:layout_marginBottom="8dp">
 
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="200dp"
+                    android:layout_marginStart="170dp"
                     android:layout_marginTop="4dp"
                     android:orientation="vertical">
 
@@ -369,7 +365,7 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/inter_extrabold"
                         android:text="50% OFF"
-                        android:textSize="28sp"
+                        android:textSize="24sp"
                         android:textStyle="bold" />
 
                     <TextView
@@ -404,14 +400,14 @@
 
                 <LinearLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="70dp"
                     android:gravity="center"
                     android:orientation="horizontal">
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginRight="30dp"
+                        android:layout_height="60dp"
+                        android:layout_marginRight="10dp"
                         android:orientation="vertical">
 
                         <TextView
@@ -420,12 +416,12 @@
                             android:layout_marginHorizontal="15dp"
                             android:layout_marginTop="25dp"
                             android:text="Valid until:"
-                            android:textSize="12dp" />
+                            android:textSize="10dp" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginHorizontal="15dp"
+                            android:layout_marginHorizontal="14dp"
                             android:text="01 Oct 2024 - 01 Jan 2025" />
 
                     </LinearLayout>
@@ -437,11 +433,11 @@
                         android:layout_marginTop="13dp"
                         android:layout_marginRight="5dp"
                         android:backgroundTint="@color/black"
-                        android:fontFamily="@font/inter_regular"
+                        android:fontFamily="@font/inter_medium"
                         android:paddingVertical="4dp"
                         android:text="Claim"
                         android:textColor="@color/white"
-                        android:textSize="12dp" />
+                        android:textSize="10dp" />
                 </LinearLayout>
             </LinearLayout>
 

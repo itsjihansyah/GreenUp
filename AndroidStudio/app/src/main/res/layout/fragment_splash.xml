@@ -7,30 +7,18 @@
     android:background="@color/white">
 
     <ImageView
-        android:layout_width="415dp"
-        android:layout_height="650dp"
+        android:layout_width="360dp"
+        android:layout_height="562dp"
         android:src="@drawable/splash"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="536dp"
-        android:fontFamily="@font/inter_extrabold"
-        android:text="Green Up"
-        android:textColor="@color/black"
-        android:textSize="48dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.082"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/btnStart"
-        android:layout_width="375dp"
-        android:layout_height="67dp"
-        android:layout_marginBottom="100dp"
+        android:layout_width="323dp"
+        android:layout_height="72dp"
+        android:layout_marginBottom="64dp"
         android:backgroundTint="#000000"
         android:fontFamily="@font/inter_bold"
         android:text="Get Started"
@@ -38,13 +26,28 @@
         android:textSize="18dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.432"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="480dp"
+        android:fontFamily="@font/inter_extrabold"
+        android:text="Green Up"
+        android:textColor="@color/black"
+        android:textSize="48dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.112"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView3"
         android:layout_width="302dp"
         android:layout_height="86dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="28dp"
         android:fontFamily="@font/inter_light"
         android:text="Track your plants' health in         real-time using smart sensors for a greener, smarter future."
         android:textColor="@color/dark_gray"

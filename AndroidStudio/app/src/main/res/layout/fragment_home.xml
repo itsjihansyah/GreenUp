@@ -306,8 +306,8 @@
 
         <ImageView
             android:id="@+id/funFactsImage"
-            android:layout_width="390dp"
-            android:layout_height="250dp"
+            android:layout_width="341dp"
+            android:layout_height="241dp"
             android:layout_gravity="right"
             android:src="@drawable/article_dummy" />
     </LinearLayout>
