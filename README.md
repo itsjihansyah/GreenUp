@@ -1,6 +1,8 @@
 # GreenUp: On Going
 GreenUp is a mobile application designed to make it easier for you to monitor your plants. The app utilizes a Firebase database integrated with IoT sensors, including light intensity, moisture, and temperature sensors. To enhance user engagement, GreenUp incorporates gamification features, encouraging consistent use of the app. This app also integrate Gemini API to assist user with planting procedur or any inquiries about plants.
 
+[![Watch the video](https://i.sstatic.net/Vp2cE.png)](https://www.youtube.com/watch?v=Ssr8k2Xad50&t=12s)
+
 ## Navigation
 We use navigation to make it easier for us to direct the page from one to another:
 
